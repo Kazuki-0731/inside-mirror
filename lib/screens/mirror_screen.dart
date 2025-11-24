@@ -17,12 +17,15 @@ class MirrorScreen extends StatefulWidget {
 class _MirrorScreenState extends State<MirrorScreen> {
   /// カメラサービスのインスタンス
   late final CameraService _cameraService;
-  
+
   /// 現在のカメラ状態
   CameraState _state = CameraState.initial;
-  
+
   /// エラー情報
   CameraError? _error;
+
+  /// 鏡像表示かどうか
+  bool _isMirrored = true;
   
   @override
   void initState() {
@@ -118,20 +121,45 @@ class _MirrorScreenState extends State<MirrorScreen> {
   /// カメラビューを構築
   Widget _buildCameraView() {
     final videoElement = _cameraService.videoElement as html.VideoElement?;
-    
+
     if (videoElement == null) {
       return _buildErrorView();
     }
-    
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Center(
+
+    return Stack(
+      children: [
+        // カメラ映像
+        Center(
           child: CameraView(
             videoElement: videoElement,
+            isMirrored: _isMirrored,
           ),
-        );
-      },
+        ),
+        // 反転ボタン
+        Positioned(
+          bottom: 32,
+          left: 0,
+          right: 0,
+          child: Center(
+            child: FloatingActionButton(
+              onPressed: _toggleMirror,
+              backgroundColor: Colors.white.withOpacity(0.8),
+              child: Icon(
+                Icons.flip,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
+  }
+
+  /// 鏡像表示を切り替え
+  void _toggleMirror() {
+    setState(() {
+      _isMirrored = !_isMirrored;
+    });
   }
   
   /// エラービューを構築

@@ -2,6 +2,12 @@
 
 Flutter Webで構築されたカメラミラーアプリケーションです。
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a361f795-8398-4f2d-819e-3d23285d94b3/deploy-status)](https://app.netlify.com/projects/inside-mirror/deploys)
+
+## デモ
+
+**https://inside-mirror.netlify.app/**
+
 ## 概要
 
 ブラウザのMediaStream APIを使用してフロントカメラにアクセスし、映像を左右反転して表示することで、実際の鏡のような体験を提供します。
@@ -83,6 +89,11 @@ flutter build web --release
 ```bash
 flutter test
 ```
+
+## ホスティング
+
+- **サービス**: Netlify（GitHub連携による自動デプロイ）
+- **URL**: https://inside-mirror.netlify.app/
 
 ## ライセンス
 

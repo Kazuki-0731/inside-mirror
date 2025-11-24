@@ -41,8 +41,7 @@ class CameraServiceImpl implements CameraService {
       // VideoElementを作成
       _videoElement = html.VideoElement()
         ..autoplay = true
-        ..muted = true
-        ..style.transform = 'scaleX(-1)'; // 鏡像変換を適用
+        ..muted = true;
       
       // ストリームをVideoElementに接続
       _videoElement!.srcObject = _stream;
