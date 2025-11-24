@@ -11,6 +11,6 @@ void main() {
     await tester.pumpWidget(const MyApp());
 
     // Verify that the app title is correct
-    expect(find.text('カメラミラー'), findsOneWidget);
+    expect(find.text('ポケット手鏡'), findsOneWidget);
   });
 }
