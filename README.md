@@ -1,6 +1,6 @@
-# Inside Mirror
+# ポケット手鏡
 
-Flutter Webで構築されたカメラミラーアプリケーションです。
+スマホのカメラを使った手鏡アプリ。いつでもどこでもサッと身だしなみチェック。
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a361f795-8398-4f2d-819e-3d23285d94b3/deploy-status)](https://app.netlify.com/projects/inside-mirror/deploys)
 [![Deploy to Netlify](https://github.com/Kazuki-0731/inside-mirror/actions/workflows/deploy.yml/badge.svg)](https://github.com/Kazuki-0731/inside-mirror/actions/workflows/deploy.yml)
@@ -9,17 +9,37 @@ Flutter Webで構築されたカメラミラーアプリケーションです。
 
 **https://inside-mirror.netlify.app/**
 
-## 概要
-
-ブラウザのMediaStream APIを使用してフロントカメラにアクセスし、映像を左右反転して表示することで、実際の鏡のような体験を提供します。
-
 ## 機能
 
 - フロントカメラの映像をリアルタイム表示
-- 鏡像（左右反転）表示
-- レスポンシブデザイン対応
-- カメラ権限の管理
-- エラーハンドリング
+- 鏡像（左右反転）表示 / 通常表示の切り替え
+- 全画面表示対応
+- PWA対応（ホーム画面に追加可能）
+- レスポンシブデザイン
+
+## PWA
+
+このアプリはPWA（Progressive Web App）に対応しています。
+
+- ホーム画面に追加してネイティブアプリのように使用可能
+- スタンドアロンモードで起動
+- オフラインキャッシュ対応
+
+### インストール方法
+
+**iOS Safari:**
+1. デモURLにアクセス
+2. 共有ボタン → 「ホーム画面に追加」
+
+**Android Chrome:**
+1. デモURLにアクセス
+2. メニュー → 「ホーム画面に追加」または表示されるインストールバナーをタップ
+
+## 技術スタック
+
+- Flutter Web
+- Dart
+- MediaStream API
 
 ## アーキテクチャ
 
@@ -93,9 +113,15 @@ flutter test
 
 ## ホスティング
 
-- **サービス**: Netlify（GitHub連携による自動デプロイ）
+- **サービス**: Netlify（GitHub Actions経由で自動デプロイ）
 - **URL**: https://inside-mirror.netlify.app/
+
+## コントリビューション
+
+コントリビューションを歓迎します。詳細は[CONTRIBUTING.md](CONTRIBUTING.md)をご覧ください。
 
 ## ライセンス
 
-MIT
+[MIT License](LICENSE)
+
+Copyright (c) 2025 Kazuki-0731
