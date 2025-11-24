@@ -2,8 +2,12 @@
 
 スマホのカメラを使った手鏡アプリ。いつでもどこでもサッと身だしなみチェック。
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a361f795-8398-4f2d-819e-3d23285d94b3/deploy-status)](https://app.netlify.com/projects/inside-mirror/deploys)
 [![Deploy to Netlify](https://github.com/Kazuki-0731/inside-mirror/actions/workflows/deploy.yml/badge.svg)](https://github.com/Kazuki-0731/inside-mirror/actions/workflows/deploy.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a361f795-8398-4f2d-819e-3d23285d94b3/deploy-status)](https://app.netlify.com/projects/inside-mirror/deploys)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Web%20%7C%20PWA-lightgrey.svg)
+![Flutter](https://img.shields.io/badge/Flutter-3.32%2B-02569B?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-3.8%2B-0175C2?logo=dart)
 
 ## デモ
 
