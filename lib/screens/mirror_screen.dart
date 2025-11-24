@@ -127,13 +127,12 @@ class _MirrorScreenState extends State<MirrorScreen> {
     }
 
     return Stack(
+      fit: StackFit.expand,
       children: [
-        // カメラ映像
-        Center(
-          child: CameraView(
-            videoElement: videoElement,
-            isMirrored: _isMirrored,
-          ),
+        // カメラ映像（全画面）
+        CameraView(
+          videoElement: videoElement,
+          isMirrored: _isMirrored,
         ),
         // 反転ボタン
         Positioned(

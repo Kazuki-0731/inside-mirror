@@ -31,11 +31,20 @@ class _CameraViewState extends State<CameraView> {
   /// ビューのユニークID
   late String _viewId;
 
+  /// ビデオが読み込まれたか
+  bool _isVideoReady = false;
+
   @override
   void initState() {
     super.initState();
     // ユニークなビューIDを生成
     _viewId = 'video-element-${widget.videoElement.hashCode}';
+
+    // VideoElementのスタイルを設定（全画面表示用）
+    widget.videoElement.style
+      ..width = '100%'
+      ..height = '100%'
+      ..objectFit = 'cover';
 
     // platformViewRegistryにVideoElementを登録
     ui_web.platformViewRegistry.registerViewFactory(
@@ -45,6 +54,26 @@ class _CameraViewState extends State<CameraView> {
 
     // 初期のミラー状態を適用
     _updateMirrorTransform();
+
+    // ビデオのメタデータ読み込み完了を監視
+    _waitForVideoReady();
+  }
+
+  /// ビデオの準備完了を待つ
+  void _waitForVideoReady() {
+    if (widget.videoElement.videoWidth > 0 && widget.videoElement.videoHeight > 0) {
+      setState(() {
+        _isVideoReady = true;
+      });
+    } else {
+      widget.videoElement.onLoadedMetadata.listen((_) {
+        if (mounted) {
+          setState(() {
+            _isVideoReady = true;
+          });
+        }
+      });
+    }
   }
 
   @override
@@ -82,9 +111,8 @@ class _CameraViewState extends State<CameraView> {
   
   @override
   Widget build(BuildContext context) {
-    // AspectRatioウィジェットを使用して元のアスペクト比を維持
-    return AspectRatio(
-      aspectRatio: _getAspectRatio(),
+    // 全画面表示
+    return SizedBox.expand(
       child: HtmlElementView(
         viewType: _viewId,
       ),
