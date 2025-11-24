@@ -3,6 +3,7 @@
 Flutter Webで構築されたカメラミラーアプリケーションです。
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a361f795-8398-4f2d-819e-3d23285d94b3/deploy-status)](https://app.netlify.com/projects/inside-mirror/deploys)
+[![Deploy to Netlify](https://github.com/Kazuki-0731/inside-mirror/actions/workflows/deploy.yml/badge.svg)](https://github.com/Kazuki-0731/inside-mirror/actions/workflows/deploy.yml)
 
 ## デモ
 
